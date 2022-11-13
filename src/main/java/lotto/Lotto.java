@@ -14,11 +14,12 @@ public class Lotto {
     private final List<Integer> numbers;
 
     public Lotto(List<Integer> numbers) {
-        validate(numbers);
+        validateLength(numbers);
+        validateNoDuplicate(numbers);
         this.numbers = numbers;
     }
 
-    private void validate(List<Integer> numbers) {
+    private void validateLength(List<Integer> numbers) {
         if (numbers.size() != LOTTO_LENGTH) {
             throw new IllegalArgumentException("[ERROR] 로또 숫자의 개수는 " +  LOTTO_LENGTH + "개 입니다.");
         }
