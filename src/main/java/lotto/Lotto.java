@@ -28,4 +28,12 @@ public class Lotto {
     private static Lotto createLottoNumbers(){
         return new Lotto(Randoms.pickUniqueNumbersInRange(MIN_RANGE, MAX_RANGE, LOTTO_LENGTH));
     }
+
+    private void validateNoDuplicate(List<Integer> numbers) {
+        Set<Integer> uniqueNumbers = new HashSet<>(numbers);
+        if (uniqueNumbers.size() != numbers.size()) {
+            throw new IllegalArgumentException("[ERROR] 로또 번호에 중복이 있습니다");
+        }
+    }
+
 }
