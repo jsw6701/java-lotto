@@ -24,4 +24,8 @@ public class Lotto {
         }
     }
 
+    // TODO: 추가 기능 구현
+    private static Lotto createLottoNumbers(){
+        return new Lotto(Randoms.pickUniqueNumbersInRange(MIN_RANGE, MAX_RANGE, LOTTO_LENGTH));
+    }
 }
